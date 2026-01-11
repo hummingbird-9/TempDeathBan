@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "deathban",
+  "version": "1.0.0",
+  "name": "TempDeathBan",
+  "description": "Bans players for 3 days when they die",
+  "authors": ["hummingbird_9"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.example.deathban.DeathBanMod"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.11",
+    "fabric": "*",
+    "minecraft": "1.21.11"
+  }
+}

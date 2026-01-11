@@ -1,0 +1,34 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabricmc.net/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath "net.fabricmc:fabric-loom:1.13.3"
+    }
+}
+
+apply plugin: 'fabric-loom'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.fabricmc.net/' }
+}
+
+dependencies {
+    // Minecraft version
+    minecraft "com.mojang:minecraft:1.21.1"  // Specify the Minecraft version you're modding
+    mappings "net.fabricmc:yarn:1.21.1+build.3:v2"  // Yarn mappings for that version
+
+    // Fabric Loader
+    modImplementation "net.fabricmc:fabric-loader:0.18.1"
+
+    // Local Fabric API jar
+    modImplementation files("/home/raychu/Downloads/fabric-api-0.141.1+1.21.11.jar")
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+}
+
+

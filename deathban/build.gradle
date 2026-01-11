@@ -1,0 +1,47 @@
+plugins {
+    id 'net.fabricmc.fabric-loom-remap' version '1.14.7'
+    id 'maven-publish'
+}
+
+version = '1.0.0'
+group = 'com.example'
+
+base {
+    archivesName = 'deathban'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "Fabric"
+        url = "https://maven.fabricmc.net/"
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:1.21.11"
+    
+    // yarn is PULLED 
+    mappings loom.officialMojangMappings() 
+
+    modImplementation "net.fabricmc:fabric-loader:0.18.4"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.141.1+1.21.11"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
+
+java {
+    // Ensures the build uses Java 21 as required by Fabric 1.21.11
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+    withSourcesJar()
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_${project.archivesBaseName}"}
+0    }
+}

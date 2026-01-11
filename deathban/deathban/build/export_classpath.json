@@ -1,0 +1,14 @@
+{
+  "projectPath": ":",
+  "classpaths": {
+    "test": [
+      "/home/raychu/deathban/deathban/build/classes/java/test",
+      "/home/raychu/deathban/deathban/build/resources/test"
+    ],
+    "main": [
+      "/home/raychu/deathban/deathban/build/classes/java/main",
+      "/home/raychu/deathban/deathban/build/resources/main",
+      "/home/raychu/deathban/deathban/build/devlibs/deathban-dev.jar"
+    ]
+  }
+}
